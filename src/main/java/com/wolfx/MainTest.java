@@ -14,7 +14,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class MainTest {
     public static void main(String[] args) {
         //通过ClassPathXmlApplicationContext的方式获取从spring中获取组件
-        /*ApplicationContext applicationContext = new ClassPathXmlApplicationContext("beans.xml");
+      /*  ApplicationContext applicationContext = new ClassPathXmlApplicationContext("beans.xml");
         Person person = (Person) applicationContext.getBean("person");
         System.out.println(person);*/
 
