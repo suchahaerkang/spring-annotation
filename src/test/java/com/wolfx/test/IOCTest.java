@@ -15,6 +15,19 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
  */
 public class IOCTest {
 
+    //测试@Conditional注解
+    @Test
+    public void test04(){
+        //创建容器
+        ApplicationContext applicationContext = new AnnotationConfigApplicationContext(MainConfig2.class);
+        //通过组件类型从容器中获取所有的实例名字
+        String[] beanNames = applicationContext.getBeanNamesForType(Person.class);
+        for (String name :beanNames) {
+            System.out.println(name);
+        }
+    }
+
+
     //测试@Scope和@Lazy注解
     @Test
     public void test03(){

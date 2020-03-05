@@ -1,10 +1,9 @@
 package com.wolfx.config;
 
 import com.wolfx.bean.Person;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Lazy;
-import org.springframework.context.annotation.Scope;
+import com.wolfx.condition.LinuxCondition;
+import com.wolfx.condition.WindowsCondition;
+import org.springframework.context.annotation.*;
 
 /**
  * @description:
@@ -20,5 +19,17 @@ public class MainConfig2 {
     public Person person(){
         System.out.println("开始创建Person实例....");
         return new Person("张三", 18);
+    }
+
+    @Conditional(WindowsCondition.class)
+    @Bean("bill")
+    public Person person01(){
+        return new Person("bill", 65);
+    }
+
+    @Conditional(LinuxCondition.class)
+    @Bean("linus")
+    public Person person02(){
+        return new Person("linus", 67);
     }
 }
