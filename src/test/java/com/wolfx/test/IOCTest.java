@@ -1,6 +1,7 @@
 package com.wolfx.test;
 
 import com.wolfx.bean.Person;
+import com.wolfx.bean.WhiteFactoryBean;
 import com.wolfx.config.MainConfig;
 import com.wolfx.config.MainConfig2;
 import org.junit.Test;
@@ -14,6 +15,25 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
  * @date: 2020-03-04 14:59
  */
 public class IOCTest {
+
+    //测试FactoryBean
+    @Test
+    public void test06() throws Exception {
+        ApplicationContext applicationContext = new AnnotationConfigApplicationContext(MainConfig2.class);
+        System.out.println(applicationContext.getBean("&whiteFactoryBean"));
+    }
+
+    //测试@Import注解
+    @Test
+    public void test05(){
+        //创建容器
+        ApplicationContext applicationContext = new AnnotationConfigApplicationContext(MainConfig2.class);
+        //获取IOC容器中的所有组件名
+        String[] beanNames = applicationContext.getBeanDefinitionNames();
+        for (String name :beanNames) {
+            System.out.println(name);
+        }
+    }
 
     //测试@Conditional注解
     @Test
