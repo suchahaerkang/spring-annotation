@@ -2,6 +2,7 @@ package com.wolfx.config;
 
 import com.wolfx.bean.Car;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Scope;
 
@@ -10,6 +11,7 @@ import org.springframework.context.annotation.Scope;
  * @author: sukang
  * @date: 2020-03-06 9:00
  */
+@ComponentScan("com.wolfx.bean")
 @Configuration
 public class MainConfigOfLifeCycle {
 
@@ -18,4 +20,5 @@ public class MainConfigOfLifeCycle {
     public Car car(){
         return new Car();
     }
+
 }
