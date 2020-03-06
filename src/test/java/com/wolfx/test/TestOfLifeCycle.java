@@ -12,6 +12,14 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
  */
 public class TestOfLifeCycle {
 
+    //测试BeanPostProcessor
+    @Test
+    public void test3(){
+        //创建容器
+        System.out.println("IOC容器创建...");
+        ApplicationContext applicationContext = new AnnotationConfigApplicationContext(MainConfigOfLifeCycle.class);
+    }
+
     //测试InitializingBean&DisposableBean&@PostConstruct&@PreDestroy自定义初始化和销毁方法
     @Test
     public void test2(){
