@@ -15,6 +15,7 @@ import org.springframework.context.annotation.Primary;
 @Configuration
 public class MainConfigOfAutowired {
 
+    @Primary
     @Bean("bookDao2")
     public BookDao bookDao(){
         BookDao bookDao = new BookDao();
