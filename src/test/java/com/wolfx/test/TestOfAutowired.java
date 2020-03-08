@@ -13,6 +13,13 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
  */
 public class TestOfAutowired {
 
+    //测试Aware
+    @Test
+    public void test02(){
+        //创建容器
+        ApplicationContext applicationContext = new AnnotationConfigApplicationContext(MainConfigOfAutowired.class);
+    }
+
     //测试@Autowired
     @Test
     public void test01(){

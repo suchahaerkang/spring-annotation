@@ -1,5 +1,6 @@
 package com.wolfx.config;
 
+import com.wolfx.bean.Red;
 import com.wolfx.dao.BookDao;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -21,5 +22,10 @@ public class MainConfigOfAutowired {
         BookDao bookDao = new BookDao();
         bookDao.setLable(2);
         return bookDao;
+    }
+
+    @Bean()
+    public Red red(){
+        return new Red();
     }
 }
